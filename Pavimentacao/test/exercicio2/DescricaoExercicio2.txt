@@ -1,0 +1,9 @@
+Faria o encapsulamento das variáveis da classe para "private", isso evitaria que alguma outra classe tenha acesso direto à estes valores
+ e também porque essas 2 variáveis não devem ser utilizadas por outras classes(segundo a logica deste código).
+
+Refatoraria o método geraObservacao para gerarObservacao e retornaCodigos para retornarCodigos, como metodologia de padronização os métodos devem 
+ser nomeados com verbos indicando uma ação. 
+
+Refatoraria a variável umoNota para umaNota.
+
+Criaria um outro método para colocar o código que faz a concatenação do texto, deixando o método mais objetivo.

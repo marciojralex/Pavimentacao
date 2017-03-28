@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Pavimentação</title>
+    </h:head>
+    <h:body>
+        <div align="center">
+            <h:form>
+            <h:panelGrid columns="2">
+                <p:outputLabel value="Veículo:"/>
+                <p:selectOneMenu id="veiculos" value="#{orcamentoMB.taxaVeiculo}" style="width: 200px">
+                    <f:selectItems value="#{orcamentoMB.veiculos}" var="tipo" itemLabel="#{tipo.veiculo}" itemValue="#{tipo.taxa}"/>
+                 </p:selectOneMenu>
+                
+                <p:outputLabel>Distância Pavimentada: </p:outputLabel>
+                <p:inputText value="#{orcamentoMB.distanciaPavimentada}" maxlength="6"/> 
+                
+                <p:outputLabel>Distância Não Pavimentada: </p:outputLabel>
+                <p:inputText value="#{orcamentoMB.distanciaNPavimentada}" maxlength="6"/>
+                
+                <p:outputLabel>Peso: </p:outputLabel>
+                <p:inputText value="#{orcamentoMB.peso}" maxlength="3"/> 
+                 
+            </h:panelGrid>
+            <h:commandButton value="Calcular" action="#{orcamentoMB.calcularOrcamento()}"/>
+            <h:commandButton value="Resetar" action="#{orcamentoMB.limpar()}"/>
+
+            </h:form>
+        </div>
+        <div align="center">
+            <p:outputLabel>Total: </p:outputLabel>
+            <p:outputLabel id="resultado" value="#{orcamentoMB.resultado}"/>
+        </div>
+    </h:body>
+</html>
+
